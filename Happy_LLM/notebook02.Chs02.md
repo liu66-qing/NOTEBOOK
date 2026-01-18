@@ -9,7 +9,7 @@ Q和K进行运算得到权重，表示从 Query 出发，对文本每一个 toke
 得到的 x 即反映了 Query 和每一个 Key 的相似程度，再通过一个 Softmax 层将其转化为和为 1 的权重：
 
 最后，我们再将得到的注意力分数和值向量做对应乘积即可，如果 Q 和 K 对应的维度比较大，softmax 放缩时就非常容易受影响，因此要将 Q 和 K 乘积的结果做一个放缩
-![Attention](image/image.png)
+![Attention](image/attention.png)
 ```
 '''注意力计算函数'''
 def attention(query,key,value,dropout=None):
